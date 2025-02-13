@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Welcome to Library</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .grid-item {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .ls{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Book Library</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" id="searchTxt" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div id="message"></div>
+
+    <div class="container my-3">
+        <h1>Manage Library</h1>
+        <hr>
+        <form id="libraryForm">
+            <div class="form-group row">
+                <label for="bookName" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="bookName" placeholder="Book Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Author" class="col-sm-2 col-form-label">Author</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="author" placeholder="Author">
+                </div>
+            </div>
+            <fieldset class="form-group">
+                <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="type" id="fiction" value="fiction"
+                                checked>
+                            <label class="form-check-label" for="fiction">
+                                Fiction
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="type" id="programming"
+                                value="programming">
+                            <label class="form-check-label" for="programming">
+                                Computer Programming
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="type" id="cooking" value="cooking">
+                            <label class="form-check-label" for="cooking">
+                                Cooking
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Add Book</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="table">
+            <h1>Your books</h1>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Type</th>
+                    </tr>
+                </thead>
+                <tbody id='tableBody'></tbody>
+            </table>
+        </div>
+
+        <h1 class="ls">Library Sections</h1>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Available Books</h2>
+                <ul>
+                    <li>The Great Gatsby</li>
+                    <li>To Kill a Mockingbird</li>
+                    <li>1984</li>
+                    <li>Pride and Prejudice</li>
+                    <li>Harry Potter Series</li>
+                </ul>
+                <button class="btn btn-primary">See More</button>
+            </div>
+            <div class="grid-item">
+                <h2>Comic Books</h2>
+                <ul>
+                    <li>Batman: Year One</li>
+                    <li>The Avengers</li>
+                    <li>Spider-Man: Blue</li>
+                    <li>X-Men: Days of Future Past</li>
+                    <li>Watchmen</li>
+                </ul>
+                <button class="btn btn-primary">See More</button>
+            </div>
+            <div class="grid-item">
+                <h2>Programming Books</h2>
+                <ul>
+                    <li>Clean Code</li>
+                    <li>Introduction to Algorithms</li>
+                    <li>JavaScript: The Good Parts</li>
+                    <li>Design Patterns</li>
+                    <li>The Pragmatic Programmer</li>
+                </ul>
+                <button class="btn btn-primary">See More</button>
+            </div>
+            <div class="grid-item">
+                <h2>Cooking Books</h2>
+                <ul>
+                    <li>Joy of Cooking</li>
+                    <li>Mastering the Art of French Cooking</li>
+                    <li>Salt, Fat, Acid, Heat</li>
+                    <li>Modernist Cuisine</li>
+                    <li>The Food Lab</li>
+                </ul>
+                <button class="btn btn-primary">See More</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="indexes6.js"></script>    
+ 
+</body>
+</html>
